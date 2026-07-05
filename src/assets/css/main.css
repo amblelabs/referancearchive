@@ -1,7 +1,6 @@
 body {
   padding: 25px;
-  background: #3d3d3d;
-  background-image: radial-gradient(circle at 20% 30%, #222222 0%, rgba(7, 8, 10, 0.612) 95%);
+  background: #0b0f15;
   color: white;
   font-size: 25px;
   display: flex;
@@ -32,10 +31,147 @@ body {
 }
 
 .menu-image {
+  position: relative;body {
+  padding: 20px;
+  background: #3d3d3d;
+  background-image: radial-gradient(circle at 20% 30%, #222222 0%, rgba(7, 8, 10, 0.612) 95%);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.menu-image {
   position: relative;
   display: inline-block;
-  margin-right: 5%;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 220px;
+}
 
+.menu-image:hover {
+  transform: scale(1.05);
+}
+
+.page-icon {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5/7;
+  background: radial-gradient(circle at 30% 25%, #2c3e5c, #0e1622);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
+  border: 1px solid #3f4a66;
+  object-fit: cover;
+}
+
+.text-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  text-decoration: none;
+  z-index: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.discord-section {
+  margin-top: 30px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hyperlink {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.hyperlink:hover {
+  color: rgb(124, 124, 204);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.discord-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .menu-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .text-over {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .menu-image {
+    max-width: 280px;
+  }
+  
+  .text-over {
+    font-size: 0.9rem;
+  }
+  
+  .discord-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+  display: inline-block;
+  margin-right: 5%;
+flex: 0 0 auto;
 }
 
 .text-over {
@@ -50,4 +186,78 @@ body {
   text-decoration: none;
   z-index: 1;
   white-space: nowrap;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.link {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: rgb(124, 124, 204);
+  text-decoration: none;
+}
+
+.discord-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.bg-gradient,
+.bg-grid,
+.bg-vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bg-gradient {
+    background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a15 100%);
+}
+
+.bg-grid {
+    background-image: 
+        linear-gradient(rgba(100, 128, 191, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 128, 191, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.bg-vignette {
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.fancy-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background-color: #1b2b427c;
+}
+
+.fancy-btn:hover {
+    transform:scale(1.05);
+    color: #ffffff;
 }
