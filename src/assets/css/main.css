@@ -1,9 +1,14 @@
 body {
   padding: 25px;
-  background-color: rgb(22, 22, 22);
+  background: #3d3d3d;
+  background-image: radial-gradient(circle at 20% 30%, #222222 0%, rgba(7, 8, 10, 0.612) 95%);
   color: white;
   font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
+
 
 .page-icon {
   width: 500px;
@@ -20,7 +25,6 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.1);
   border: 1px solid #3f4a66;
   float: left;
-  
 }
 
 .menu-image:hover{
@@ -30,6 +34,8 @@ body {
 .menu-image {
   position: relative;
   display: inline-block;
+  margin-right: 5%;
+
 }
 
 .text-over {
@@ -44,5 +50,4 @@ body {
   text-decoration: none;
   z-index: 1;
   white-space: nowrap;
-  background: #ffffff31;
 }
